@@ -167,33 +167,167 @@ La intimidad, la higiene y la seguridad son prioridad.
 </div>
 
 <script>
+
+
 const retos = [
+
+/* =========================
+   NIVEL 1: SUAVE
+========================= */
+
 {nivel:"suave",titulo:"💋 Beso prolongado",texto:"Besa a tu pareja durante 30 segundos."},
 {nivel:"suave",titulo:"👀 Miradas",texto:"Mírense fijamente durante un minuto sin hablar."},
 {nivel:"suave",titulo:"❤️ Confesión",texto:"Dile a tu pareja qué es lo que más te atrae de su cuerpo."},
 {nivel:"suave",titulo:"💆 Masaje",texto:"Regálale a tu pareja un masaje relajante de dos minutos."},
 {nivel:"suave",titulo:"🔥 Susurro",texto:"Susúrrale al oído una fantasía que te gustaría explorar."},
-{nivel:"suave",titulo:"💋 Besos sorpresa",texto:"Dale cinco besos en diferentes partes del cuerpo, donde haya aceptado."},
+{nivel:"suave",titulo:"💋 Besos sorpresa",texto:"Dale cinco besos en diferentes partes del cuerpo que haya aceptado."},
+{nivel:"suave",titulo:"❤️ Atracción",texto:"¿Qué parte de mi cuerpo te parece más atractiva?"},
+{nivel:"suave",titulo:"😈 Secreto",texto:"¿Cuál es tu mayor debilidad cuando estás con tu pareja?"},
+{nivel:"suave",titulo:"🔥 Confesión",texto:"¿Qué es lo que más disfrutas de nuestros momentos íntimos?"},
+{nivel:"suave",titulo:"💌 Deseo",texto:"Dile tres cosas que te gustaría hacer en una cita romántica."},
+
+/* =========================
+   NIVEL 2: MEDIO
+========================= */
+
 {nivel:"medio",titulo:"😈 El desafío",texto:"Deja que tu pareja elija dónde recibir un beso."},
-{nivel:"medio",titulo:"🖤 Juego de roles",texto:"Interpreten dos personajes y creen una escena romántica."},
+{nivel:"medio",titulo:"🖤 Juego de roles",texto:"Interpreten dos personajes y creen una escena de seducción."},
 {nivel:"medio",titulo:"🔥 Sin manos",texto:"Dale un beso a tu pareja sin utilizar las manos."},
 {nivel:"medio",titulo:"💌 Confesión secreta",texto:"Cuenta algo íntimo que nunca le hayas contado a tu pareja."},
 {nivel:"medio",titulo:"💃 Baile privado",texto:"Haz un baile sensual de un minuto."},
-{nivel:"medio",titulo:"🎭 Tú mandas",texto:"Durante dos minutos, tu pareja elige entre tres retos que tú hayas aprobado previamente."},
+{nivel:"medio",titulo:"🎭 Tú mandas",texto:"Tu pareja elige entre tres retos que ambos hayan aprobado."},
 {nivel:"medio",titulo:"💋 Beso inesperado",texto:"Recrea el primer beso que tuvieron."},
-{nivel:"medio",titulo:"❤️ Recuerdo especial",texto:"Recrea un momento íntimo o romántico que hayan vivido juntos."},
-{nivel:"alto",titulo:"🔥 Fantasía compartida",texto:"Describe una fantasía que ambos quieran experimentar."},
-{nivel:"alto",titulo:"😈 Posición favorita",texto:"Elijan una posición íntima que ambos quieran probar y conversen sobre cómo hacerlo cómodamente."},
-{nivel:"alto",titulo:"💋 Beso de película",texto:"Dale a tu pareja un beso apasionado de un minuto, si ambos quieren."},
-{nivel:"alto",titulo:"🛏️ Escenario especial",texto:"Elijan un lugar privado y cómodo para un momento romántico."},
-{nivel:"alto",titulo:"🎲 Reto sorpresa",texto:"Tu pareja elige un desafío íntimo de una lista que ambos hayan aprobado."},
-{nivel:"alto",titulo:"❤️ Iniciativa",texto:"Toma la iniciativa para crear un momento íntimo, respetando las preferencias de ambos."},
-{nivel:"fantasia",titulo:"😈 Recuerdo del pasado",texto:"Cuéntale a tu pareja algo que una expareja hacía y que te gustaría recrear con ella, solamente si ambos están cómodos."},
-{nivel:"fantasia",titulo:"🔥 Intercambio",texto:"Hazle a tu pareja un gesto romántico o sensual que recuerdes de una relación anterior."},
-{nivel:"fantasia",titulo:"💭 Fantasía pendiente",texto:"Revela una fantasía que todavía no hayas cumplido."},
-{nivel:"fantasia",titulo:"🎭 Personajes",texto:"Inventen una escena de seducción con personajes diferentes."},
-{nivel:"fantasia",titulo:"❤️ Pregunta prohibida",texto:"¿Qué experiencia íntima te gustaría vivir conmigo?"}
+{nivel:"medio",titulo:"❤️ Recuerdo especial",texto:"Recrea un momento romántico que hayan vivido juntos."},
+{nivel:"medio",titulo:"🌶️ Pregunta atrevida",texto:"¿Qué te gustaría que hiciera más seguido en la intimidad?"},
+{nivel:"medio",titulo:"🔥 Curiosidad",texto:"¿Alguna vez has tenido una fantasía que te dio vergüenza contar?"},
+{nivel:"medio",titulo:"😈 Confesión",texto:"¿Prefieres tomar la iniciativa o que tu pareja lo haga?"},
+{nivel:"medio",titulo:"💋 Preferencias",texto:"¿Qué tipo de besos te gustan más?"},
+{nivel:"medio",titulo:"🛏️ Lugar especial",texto:"¿Cuál sería un lugar diferente donde te gustaría tener una cita romántica?"},
+{nivel:"medio",titulo:"❤️ Sin secretos",texto:"¿Qué te gustaría experimentar conmigo que todavía no hemos probado?"},
+
+/* =========================
+   FANTASÍAS Y EXPERIENCIAS:
+   PASADO Y EXPAREJAS
+========================= */
+
+{nivel:"fantasia",titulo:"😈 Experiencia personal",texto:"¿Alguna vez te han introducido un dedo durante un encuentro íntimo?"},
+{nivel:"fantasia",titulo:"🔥 Primera experiencia",texto:"¿Qué recuerdas de tu primera experiencia sexual?"},
+{nivel:"fantasia",titulo:"💋 Recuerdos íntimos",texto:"¿Qué era lo que más disfrutabas sexualmente con tus exparejas?"},
+{nivel:"fantasia",titulo:"😈 Comparación",texto:"¿Qué hacías con una expareja que te gustaría volver a experimentar conmigo?"},
+{nivel:"fantasia",titulo:"🌶️ Confesión del pasado",texto:"¿Alguna vez tuviste una experiencia sexual que te sorprendió?"},
+{nivel:"fantasia",titulo:"🔥 Pregunta directa",texto:"¿Qué es lo más atrevido que has hecho con una expareja?"},
+{nivel:"fantasia",titulo:"💭 Preferencias anteriores",texto:"¿Qué te gustaba físicamente de tus exparejas?"},
+{nivel:"fantasia",titulo:"😈 Experiencia oral",texto:"¿Qué has disfrutado más de las experiencias íntimas orales?"},
+{nivel:"fantasia",titulo:"💋 Recuerdo especial",texto:"¿Recuerdas algún beso de una expareja que nunca hayas olvidado?"},
+{nivel:"fantasia",titulo:"🔥 Sin vergüenza",texto:"¿Alguna vez probaste algo sexual con una expareja que al principio no te atrevías a hacer?"},
+{nivel:"fantasia",titulo:"😈 El pasado",texto:"¿Qué experiencia sexual de tu pasado repetirías y cuál no volverías a repetir?"},
+{nivel:"fantasia",titulo:"🌶️ Sinceridad",texto:"¿Alguna vez fingiste disfrutar algo durante una relación íntima?"},
+{nivel:"fantasia",titulo:"💭 Curiosidad",texto:"¿Alguna vez sentiste curiosidad por probar algo que una expareja te propuso?"},
+{nivel:"fantasia",titulo:"🔥 Confesión prohibida",texto:"¿Alguna vez tuviste relaciones íntimas en un lugar inesperado?"},
+{nivel:"fantasia",titulo:"😈 Experiencia oral",texto:"¿Qué te gustaba de los juegos orales con tus parejas anteriores?"},
+{nivel:"fantasia",titulo:"💋 Comparte",texto:"¿Qué detalle íntimo de una expareja recuerdas con cariño?"},
+{nivel:"fantasia",titulo:"🌶️ Comparación sincera",texto:"¿Qué prefieres de nuestra intimidad frente a tus relaciones anteriores?"},
+{nivel:"fantasia",titulo:"🔥 El recuerdo",texto:"¿Alguna vez una expareja te enseñó algo íntimo que todavía te gusta?"},
+{nivel:"fantasia",titulo:"😈 Sin filtros",texto:"¿Cuál fue la fantasía más atrevida que compartiste con una expareja?"},
+{nivel:"fantasia",titulo:"💭 Pregunta del pasado",texto:"¿Alguna vez quisiste repetir un encuentro íntimo con una expareja?"},
+{nivel:"fantasia",titulo:"🔥 Curiosidad sexual",texto:"¿Has probado alguna vez juguetes íntimos?"},
+{nivel:"fantasia",titulo:"😈 Experiencia diferente",texto:"¿Alguna vez experimentaste algo íntimo que nunca imaginaste probar?"},
+{nivel:"fantasia",titulo:"💋 Confesión",texto:"¿Qué te gustaba que hiciera tu expareja para hacerte sentir deseado/a?"},
+{nivel:"fantasia",titulo:"🌶️ Pregunta picante",texto:"¿Alguna vez recibiste una propuesta sexual que te dejó sorprendido/a?"},
+{nivel:"fantasia",titulo:"🔥 El reto del pasado",texto:"Describe una experiencia íntima anterior que te gustaría recrear conmigo, si ambos quieren."},
+
+/* =========================
+   PREGUNTAS ADICIONALES:
+   PRIMERAS EXPERIENCIAS Y EX
+========================= */
+
+{nivel:"fantasia",titulo:"😈 Primera vez",texto:"¿Cómo comenzó tu primera relación sexual? Cuenta cómo se dio la situación."},
+{nivel:"fantasia",titulo:"🔥 La iniciativa",texto:"¿Quién tomó la iniciativa en tu primera experiencia sexual?"},
+{nivel:"fantasia",titulo:"💭 Curiosidad inicial",texto:"¿Qué te motivó a tener tu primera relación sexual?"},
+{nivel:"fantasia",titulo:"❤️ Primer recuerdo",texto:"¿Qué recuerdas de la persona con quien tuviste tu primera experiencia sexual?"},
+{nivel:"fantasia",titulo:"🌶️ Primera experiencia",texto:"¿Tu primera experiencia fue como la imaginabas o fue diferente?"},
+{nivel:"fantasia",titulo:"😈 Nervios",texto:"¿Estabas nervioso/a durante tu primera relación sexual?"},
+{nivel:"fantasia",titulo:"💋 Primera decisión",texto:"¿Tu primera experiencia fue por amor, curiosidad, deseo o una combinación?"},
+{nivel:"fantasia",titulo:"🔥 Aprendizaje",texto:"¿Qué aprendiste de tu primera relación sexual?"},
+{nivel:"fantasia",titulo:"💭 Recuerdo inolvidable",texto:"¿Cuál fue el encuentro íntimo de tu pasado que más recuerdas?"},
+{nivel:"fantasia",titulo:"😈 Posición favorita",texto:"¿Qué posiciones sexuales acostumbrabas practicar con tus exparejas?"},
+{nivel:"fantasia",titulo:"🌶️ Posición diferente",texto:"¿Cuál fue la posición más diferente que llegaste a probar con una expareja?"},
+{nivel:"fantasia",titulo:"🔥 Preferencias",texto:"¿Tenías alguna posición favorita con tus exparejas? ¿Cuál era?"},
+{nivel:"fantasia",titulo:"💋 Experiencias nuevas",texto:"¿Qué posición sexual descubriste gracias a una expareja?"},
+{nivel:"fantasia",titulo:"😈 Iniciativa anterior",texto:"¿Con tus exparejas eras tú quien buscaba los encuentros íntimos?"},
+{nivel:"fantasia",titulo:"❤️ Lo que te gustaba",texto:"¿Qué era lo que más te gustaba de la intimidad con tus exparejas?"},
+{nivel:"fantasia",titulo:"🔥 Lo que extrañabas",texto:"¿Hay alguna experiencia íntima de una relación anterior que te gustaría volver a vivir?"},
+{nivel:"fantasia",titulo:"💭 Algo diferente",texto:"¿Qué hacías con una expareja que nunca has hecho conmigo?"},
+{nivel:"fantasia",titulo:"😈 Confesión",texto:"¿Alguna vez tuviste una relación sexual sin estar enamorado/a?"},
+{nivel:"fantasia",titulo:"🌶️ Encuentro inesperado",texto:"¿Alguna vez tuviste un encuentro íntimo que surgió espontáneamente?"},
+{nivel:"fantasia",titulo:"💋 Besos del pasado",texto:"¿Qué tipo de besos te gustaban más de tus exparejas?"},
+{nivel:"fantasia",titulo:"🔥 Experiencia oral",texto:"¿Qué descubriste sobre tus preferencias en los juegos orales durante relaciones anteriores?"},
+{nivel:"fantasia",titulo:"😈 Atrevimiento",texto:"¿Cuál fue la propuesta íntima más atrevida que te hizo una expareja?"},
+{nivel:"fantasia",titulo:"💭 Una confesión",texto:"¿Alguna vez hiciste algo sexual que inicialmente te daba vergüenza?"},
+{nivel:"fantasia",titulo:"❤️ Comparación",texto:"¿Qué ha cambiado en tu vida sexual desde tu primera relación hasta hoy?"},
+{nivel:"fantasia",titulo:"🔥 El lugar",texto:"¿En qué lugar más inesperado tuviste un encuentro íntimo con una expareja?"},
+{nivel:"fantasia",titulo:"😈 Experiencia anal",texto:"¿Alguna vez experimentaste estimulación anal? ¿Cómo fue tu experiencia?"},
+{nivel:"fantasia",titulo:"🌶️ Juguetes íntimos",texto:"¿Alguna expareja te propuso utilizar juguetes sexuales? ¿Aceptaste?"},
+{nivel:"fantasia",titulo:"💋 Lo repetirías",texto:"¿Qué experiencia íntima de tu pasado repetirías?"},
+{nivel:"fantasia",titulo:"🔥 Lo que cambiarías",texto:"¿Qué cambiarías de tus experiencias sexuales anteriores?"},
+{nivel:"fantasia",titulo:"😈 Una enseñanza",texto:"¿Alguna expareja te enseñó algo sobre tu propio placer que no conocías?"},
+{nivel:"fantasia",titulo:"💭 La propuesta",texto:"¿Alguna vez rechazaste una propuesta sexual de una expareja? ¿Por qué?"},
+{nivel:"fantasia",titulo:"❤️ Sinceridad",texto:"¿Alguna vez comparaste mentalmente a una pareja con otra durante la intimidad?"},
+{nivel:"fantasia",titulo:"🔥 El recuerdo secreto",texto:"¿Hay alguna experiencia sexual de tu pasado que nunca le hayas contado a tu pareja actual?"},
+{nivel:"fantasia",titulo:"😈 Frecuencia",texto:"¿Con alguna expareja tenías encuentros íntimos más espontáneos o más planeados?"},
+{nivel:"fantasia",titulo:"🌶️ Fantasía anterior",texto:"¿Alguna vez cumpliste una fantasía sexual que tenías desde hacía mucho tiempo con una expareja?"},
+{nivel:"fantasia",titulo:"💋 Confesión del pasado",texto:"¿Qué te gustaba que hiciera tu expareja para hacerte sentir deseado/a?"},
+{nivel:"fantasia",titulo:"🔥 Una experiencia pendiente",texto:"¿Qué práctica íntima te propuso alguna expareja y nunca llegaste a probar?"},
+{nivel:"fantasia",titulo:"😈 Sin filtros",texto:"¿Cuál fue la experiencia sexual más atrevida que viviste en una relación anterior?"},
+{nivel:"fantasia",titulo:"💭 El aprendizaje",texto:"¿Qué descubriste sobre tus gustos sexuales después de tus relaciones anteriores?"},
+{nivel:"fantasia",titulo:"❤️ Una comparación",texto:"¿Qué diferencia encuentras entre tu primera experiencia sexual y tu intimidad actual?"},
+{nivel:"fantasia",titulo:"🌶️ El secreto",texto:"¿Hay algo que hacías con una expareja y que te gustaría contarme?"},
+{nivel:"fantasia",titulo:"🔥 Pregunta directa",texto:"¿Alguna vez tuviste relaciones íntimas con una expareja en un lugar diferente a una habitación?"},
+{nivel:"fantasia",titulo:"😈 La curiosidad",texto:"¿Alguna vez te propusieron experimentar con una práctica íntima que nunca habías considerado?"},
+{nivel:"fantasia",titulo:"💋 La iniciativa",texto:"¿Cómo te gustaba que una expareja iniciara un momento íntimo?"},
+{nivel:"fantasia",titulo:"❤️ Lo que extrañas",texto:"¿Qué aspecto de tus relaciones anteriores recuerdas con más cariño?"},
+{nivel:"fantasia",titulo:"🔥 Pregunta incómoda",texto:"¿Alguna vez te arrepentiste de haber tenido una experiencia sexual?"},
+{nivel:"fantasia",titulo:"😈 Experiencia espontánea",texto:"¿Alguna vez un encuentro íntimo con una expareja ocurrió sin haberlo planeado?"},
+{nivel:"fantasia",titulo:"💭 Deseo pendiente",texto:"¿Qué fantasía que tenías con una expareja nunca llegaste a cumplir?"},
+{nivel:"fantasia",titulo:"🌶️ Confesión íntima",texto:"¿Qué es lo más atrevido que alguna vez le pediste a una expareja?"},
+{nivel:"fantasia",titulo:"🔥 El pasado y el presente",texto:"¿Qué experiencia de tu pasado te gustaría compartir conmigo por primera vez?"},
+{nivel:"fantasia",titulo:"❤️ Pregunta final",texto:"Si pudieras contarme una sola cosa de tu pasado sexual sin temor a ser juzgado/a, ¿qué sería?"},
+
+/* =========================
+   FANTASÍAS Y EXPERIENCIAS:
+   SIN EX
+========================= */
+
+{nivel:"fantasia",titulo:"😈 Fantasía secreta",texto:"¿Cuál es esa fantasía sexual que todavía no has cumplido?"},
+{nivel:"fantasia",titulo:"🔥 Curiosidad anal",texto:"¿Te da curiosidad experimentar con estimulación anal?"},
+{nivel:"fantasia",titulo:"💋 Juegos orales",texto:"¿Qué opinas de los juegos orales en una relación?"},
+{nivel:"fantasia",titulo:"🌶️ Pregunta íntima",texto:"¿Qué práctica íntima te produce más curiosidad?"},
+{nivel:"fantasia",titulo:"😈 Posiciones",texto:"¿Cuál es la posición íntima que más te gusta?"},
+{nivel:"fantasia",titulo:"🔥 Lugar prohibido",texto:"¿En qué lugar privado te gustaría vivir una experiencia apasionada?"},
+{nivel:"fantasia",titulo:"💭 Deseo oculto",texto:"¿Hay algo que siempre hayas querido probar pero nunca te has atrevido a pedir?"},
+{nivel:"fantasia",titulo:"😈 Dominación",texto:"¿Te gusta tomar el control o prefieres cederlo?"},
+{nivel:"fantasia",titulo:"🌶️ Juguetes",texto:"¿Estarías dispuesto/a a experimentar con juguetes íntimos?"},
+{nivel:"fantasia",titulo:"🔥 Experiencia nueva",texto:"¿Te gustaría probar una experiencia íntima diferente a las habituales?"},
+{nivel:"fantasia",titulo:"💋 Sensibilidad",texto:"¿Qué tipo de caricias te producen más placer?"},
+{nivel:"fantasia",titulo:"😈 Confesión profunda",texto:"¿Qué es algo que nunca te has atrevido a pedir en la intimidad?"},
+{nivel:"fantasia",titulo:"❤️ Fantasía compartida",texto:"Describe una noche ideal de pasión con tu pareja."},
+{nivel:"fantasia",titulo:"🔥 Pregunta sin filtros",texto:"¿Qué te gustaría que descubriéramos juntos en nuestra intimidad?"},
+{nivel:"fantasia",titulo:"💭 Curiosidad",texto:"¿Alguna vez has tenido curiosidad por experimentar con una práctica nueva?"},
+{nivel:"fantasia",titulo:"😈 Secreto íntimo",texto:"¿Cuál es tu mayor secreto o curiosidad sexual que todavía no has contado?"},
+{nivel:"fantasia",titulo:"🌶️ Preferencias",texto:"¿Qué prefieres: encuentros espontáneos o momentos planeados?"},
+{nivel:"fantasia",titulo:"🔥 Sinceridad total",texto:"¿Hay algún límite íntimo que te gustaría conversar conmigo?"},
+{nivel:"fantasia",titulo:"💋 Tu elección",texto:"Si pudieras elegir una experiencia nueva para los dos, ¿cuál sería?"},
+{nivel:"fantasia",titulo:"❤️ Confianza",texto:"¿Qué necesitas para sentirte completamente libre y cómodo/a en la intimidad?"},
+
+/* =========================
+   RETO FINAL
+========================= */
+
+{nivel:"fantasia",titulo:"❤️ Confesión",texto:"Agarra mi mano y guíala hacia las partes de tu cuerpo donde te gusta recibir caricias, siempre con tu consentimiento."}
+
 ];
+
+
 
 let usados=[];
 let vueltas=0;
@@ -255,3 +389,4 @@ function pasar(){
 </script>
 </body>
 </html>
+
