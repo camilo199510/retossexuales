@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruleta Prohibida 🔥</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ min-height:100vh;
+ font-family:Arial,sans-serif;
+ color:white;
+ background:radial-gradient(circle at top,#48102e,#130817 65%,#08040c);
+ text-align:center;
+ padding:25px 15px;
+}
+h1{
+ color:#ff4da6;
+ font-size:36px;
+ text-shadow:0 0 20px #ff168b;
+ margin-bottom:5px;
+}
+.subtitle{color:#e8b5d0;margin-bottom:25px}
+.container{
+ max-width:650px;margin:auto;
+ background:#1c1020;
+ border:1px solid #7d285b;
+ border-radius:22px;
+ padding:25px;
+ box-shadow:0 0 35px #a0006333;
+}
+.badge{
+ display:inline-block;
+ background:#4c1740;
+ padding:8px 15px;
+ border-radius:20px;
+ color:#ff8cc8;
+ margin:5px;
+ font-size:13px;
+}
+.wheel{
+ width:250px;height:250px;
+ margin:25px auto;
+ border-radius:50%;
+ border:9px solid #ff4da6;
+ background:conic-gradient(
+ #74144c 0deg 60deg,
+ #31102d 60deg 120deg,
+ #a31d63 120deg 180deg,
+ #31102d 180deg 240deg,
+ #74144c 240deg 300deg,
+ #31102d 300deg 360deg);
+ box-shadow:0 0 30px #ff168b;
+ display:flex;align-items:center;justify-content:center;
+ position:relative;
+ transition:transform 3s cubic-bezier(.12,.7,.12,1);
+}
+.wheel span{
+ font-size:60px;
+ text-shadow:0 0 15px #ff4da6;
+}
+.pointer{
+ font-size:35px;
+ color:#ff70b8;
+ margin-bottom:-35px;
+ position:relative;
+ z-index:2;
+}
+button,select{
+ border:none;border-radius:12px;
+ padding:14px 20px;
+ font-size:16px;
+ font-weight:bold;
+ cursor:pointer;
+}
+.spin{
+ background:linear-gradient(90deg,#ff168b,#9b32ff);
+ color:white;width:100%;
+ box-shadow:0 0 20px #ff168b66;
+ margin:15px 0;
+}
+.secondary{background:#3a2040;color:white;margin:5px}
+button:disabled{opacity:.5;cursor:not-allowed}
+.result{
+ background:#301329;
+ border:1px solid #ff4da6;
+ border-radius:15px;
+ padding:22px;
+ margin-top:20px;
+ min-height:145px;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+}
+.result small{color:#ff8cc8}
+.result h2{color:#ff75bb;margin:12px 0}
+.result p{color:#f4dce9;line-height:1.6}
+select{
+ background:#301329;color:white;
+ border:1px solid #a34a7e;
+ width:100%;margin:10px 0;
+}
+.options{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:10px;
+ margin-top:20px;
+}
+.options button{background:#35172f;color:#ffb5d9}
+.footer{font-size:12px;color:#bb9aad;margin-top:25px;line-height:1.6}
+</style>
+</head>
+<body>
+
+<h1>🔥 RULETA PROHIBIDA 🔥</h1>
+<p class="subtitle">Solo para adultos · Dos personas · Sin límites impuestos</p>
+
+<div class="container">
+
+<div>
+<span class="badge">💋 Besos</span>
+<span class="badge">🔥 Atrevidos</span>
+<span class="badge">❤️ Parejas</span>
+<span class="badge">🌶️ Intensos</span>
+</div>
+
+<h3>Selecciona la intensidad</h3>
+<select id="level">
+<option value="todos">🔥 Todos los retos</option>
+<option value="suave">💋 Nivel 1 - Sensual</option>
+<option value="medio">🌶️ Nivel 2 - Atrevido</option>
+<option value="alto">🔥 Nivel 3 - Intenso</option>
+<option value="fantasia">😈 Fantasías y experiencias</option>
+</select>
+
+<div class="pointer">▼</div>
+<div class="wheel" id="wheel">
+<span>🔥</span>
+</div>
+
+<button class="spin" id="spin" onclick="girar()">
+🎰 GIRAR LA RULETA
+</button>
+
+<div class="result" id="result">
+<small>EL DESTINO DECIDIRÁ...</small>
+<h2>¿Están preparados? 😈</h2>
+<p>Presiona el botón para descubrir el siguiente desafío.</p>
+</div>
+
+<div class="options">
+<button onclick="siguiente()">➡️ Otro reto</button>
+<button onclick="aceptar()">❤️ Aceptamos</button>
+<button onclick="pasar()">⏭️ Pasar reto</button>
+</div>
+
+<p style="color:#ff9acb;margin-top:20px">Retos realizados: <b id="count">0</b></p>
+
+<div class="footer">
+Todos los participantes deben ser adultos y aceptar libremente cada reto.
+Cualquiera puede cambiar o detener un desafío en cualquier momento.
+La intimidad, la higiene y la seguridad son prioridad.
+</div>
+
+</div>
+
+<script>
+const retos = [
+{nivel:"suave",titulo:"💋 Beso prolongado",texto:"Besa a tu pareja durante 30 segundos."},
+{nivel:"suave",titulo:"👀 Miradas",texto:"Mírense fijamente durante un minuto sin hablar."},
+{nivel:"suave",titulo:"❤️ Confesión",texto:"Dile a tu pareja qué es lo que más te atrae de su cuerpo."},
+{nivel:"suave",titulo:"💆 Masaje",texto:"Regálale a tu pareja un masaje relajante de dos minutos."},
+{nivel:"suave",titulo:"🔥 Susurro",texto:"Susúrrale al oído una fantasía que te gustaría explorar."},
+{nivel:"suave",titulo:"💋 Besos sorpresa",texto:"Dale cinco besos en diferentes partes del cuerpo, donde haya aceptado."},
+{nivel:"medio",titulo:"😈 El desafío",texto:"Deja que tu pareja elija dónde recibir un beso."},
+{nivel:"medio",titulo:"🖤 Juego de roles",texto:"Interpreten dos personajes y creen una escena romántica."},
+{nivel:"medio",titulo:"🔥 Sin manos",texto:"Dale un beso a tu pareja sin utilizar las manos."},
+{nivel:"medio",titulo:"💌 Confesión secreta",texto:"Cuenta algo íntimo que nunca le hayas contado a tu pareja."},
+{nivel:"medio",titulo:"💃 Baile privado",texto:"Haz un baile sensual de un minuto."},
+{nivel:"medio",titulo:"🎭 Tú mandas",texto:"Durante dos minutos, tu pareja elige entre tres retos que tú hayas aprobado previamente."},
+{nivel:"medio",titulo:"💋 Beso inesperado",texto:"Recrea el primer beso que tuvieron."},
+{nivel:"medio",titulo:"❤️ Recuerdo especial",texto:"Recrea un momento íntimo o romántico que hayan vivido juntos."},
+{nivel:"alto",titulo:"🔥 Fantasía compartida",texto:"Describe una fantasía que ambos quieran experimentar."},
+{nivel:"alto",titulo:"😈 Posición favorita",texto:"Elijan una posición íntima que ambos quieran probar y conversen sobre cómo hacerlo cómodamente."},
+{nivel:"alto",titulo:"💋 Beso de película",texto:"Dale a tu pareja un beso apasionado de un minuto, si ambos quieren."},
+{nivel:"alto",titulo:"🛏️ Escenario especial",texto:"Elijan un lugar privado y cómodo para un momento romántico."},
+{nivel:"alto",titulo:"🎲 Reto sorpresa",texto:"Tu pareja elige un desafío íntimo de una lista que ambos hayan aprobado."},
+{nivel:"alto",titulo:"❤️ Iniciativa",texto:"Toma la iniciativa para crear un momento íntimo, respetando las preferencias de ambos."},
+{nivel:"fantasia",titulo:"😈 Recuerdo del pasado",texto:"Cuéntale a tu pareja algo que una expareja hacía y que te gustaría recrear con ella, solamente si ambos están cómodos."},
+{nivel:"fantasia",titulo:"🔥 Intercambio",texto:"Hazle a tu pareja un gesto romántico o sensual que recuerdes de una relación anterior."},
+{nivel:"fantasia",titulo:"💭 Fantasía pendiente",texto:"Revela una fantasía que todavía no hayas cumplido."},
+{nivel:"fantasia",titulo:"🎭 Personajes",texto:"Inventen una escena de seducción con personajes diferentes."},
+{nivel:"fantasia",titulo:"❤️ Pregunta prohibida",texto:"¿Qué experiencia íntima te gustaría vivir conmigo?"}
+];
+
+let usados=[];
+let vueltas=0;
+let girando=false;
+
+function elegir(){
+ let nivel=document.getElementById("level").value;
+ let disponibles=retos.filter(r=>
+ (nivel==="todos"||r.nivel===nivel)&&!usados.includes(r.titulo)
+ );
+ if(!disponibles.length){
+ usados=[];
+ disponibles=retos.filter(r=>nivel==="todos"||r.nivel===nivel);
+ }
+ return disponibles[Math.floor(Math.random()*disponibles.length)];
+}
+
+function mostrar(r){
+ document.getElementById("result").innerHTML=`
+ <small>🔥 TU RETO HA SIDO SELECCIONADO</small>
+ <h2>${r.titulo}</h2>
+ <p>${r.texto}</p>`;
+}
+
+function girar(){
+ if(girando)return;
+ girando=true;
+ document.getElementById("spin").disabled=true;
+ let r=elegir();
+ usados.push(r.titulo);
+ let wheel=document.getElementById("wheel");
+ vueltas+=1440+Math.floor(Math.random()*1080);
+ wheel.style.transform=`rotate(${vueltas}deg)`;
+ setTimeout(()=>{
+ mostrar(r);
+ girando=false;
+ document.getElementById("spin").disabled=false;
+ },3100);
+}
+
+function siguiente(){girar()}
+
+function aceptar(){
+ document.getElementById("count").textContent=
+ Number(document.getElementById("count").textContent)+1;
+ document.getElementById("result").innerHTML=`
+ <small>❤️ RETO ACEPTADO</small>
+ <h2>¡A DISFRUTAR!</h2>
+ <p>Cuando estén listos, giren nuevamente.</p>`;
+}
+
+function pasar(){
+ document.getElementById("result").innerHTML=`
+ <small>⏭️ RETO OMITIDO</small>
+ <h2>¡Sin presiones!</h2>
+ <p>Elijan otro desafío.</p>`;
+ girar();
+}
+</script>
+</body>
+</html>
